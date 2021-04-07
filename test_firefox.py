@@ -3,6 +3,7 @@ import os
 from selenium.webdriver.common.by import By
 from src.testproject.classes import DriverStepSettings, StepSettings
 from src.testproject.decorator import report_assertion_errors
+from src.testproject.enums import TakeScreenshotConditionType
 from src.testproject.sdk.drivers import webdriver
 import pytest
 
@@ -24,7 +25,7 @@ def driver():
     driver = webdriver.Firefox(token="kJCeheoppFyo8uaZ17k0JQyBck1qLIf5ZrynbI6t7Fk1",
                               project_name="Ran's Project",
                               job_name="Python Test Check")
-    step_settings = StepSettings(timeout=15000)
+    step_settings = StepSettings(timeout=15000, screenshot_condition=TakeScreenshotConditionType.Failure)
     with DriverStepSettings(driver, step_settings):
         yield driver
     driver.quit()

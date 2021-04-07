@@ -20,7 +20,7 @@ def driver():
     driver = webdriver.Chrome(token="kJCeheoppFyo8uaZ17k0JQyBck1qLIf5ZrynbI6t7Fk1",
                               project_name="Ran's Project",
                               job_name="Python Test Check")
-    step_settings = StepSettings(timeout=15000)
+    step_settings = StepSettings(timeout=15000, screenshot_condition=TakeScreenshotConditionType.Failure)
     with DriverStepSettings(driver, step_settings):
         yield driver
     driver.quit()
