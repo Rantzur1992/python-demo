@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from src.testproject.classes import DriverStepSettings, StepSettings
 from src.testproject.decorator import report_assertion_errors
+from src.testproject.enums import TakeScreenshotConditionType
 from src.testproject.sdk.drivers import webdriver
 import pytest
 
